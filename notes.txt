@@ -1,0 +1,29 @@
+How to Install a Virtual Environment using Venv
+
+1. pip install virtualenv
+2. py -m venv env #for current version
+2a. python<version> -m venv <virtual-environment-name> #to pick version from
+
+Activate Environment:
+    env/Scripts/activate.bat //In CMD
+    env/Scripts/Activate.ps1 //In Powershel
+
+How to Deactivate a Virtual Environment:
+     ~ deactivate
+
+Source: https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/
+
+
+To push changes to flask db:
+    $ python
+from app import app, db
+app.app_context().push()
+db.create_all()
+
+
+https://www.geeksforgeeks.org/password-hashing-with-bcrypt-in-flask/#
+
+https://www.youtube.com/watch?v=GbJPqu0ff9A&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz&index=7
+https://github.com/arpanneupane19/Python-Flask-Authentication-Tutorial/tree/main/templates
+https://www.youtube.com/watch?v=71EU8gnZqZQ
+https://getbootstrap.com/docs/5.3/utilities/background/#background-color

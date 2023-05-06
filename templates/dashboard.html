@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card position-absolute top-50 start-50 translate-middle  w-100 h-75" style="max-width: 750px; max-height:600px">
+    <div class="card-img-top p-3 mb-2 bg-body-secondary h-35" >
+        <h3 class="card-title">Hello {{current_user.username}} </h3>
+        <hr class="border border-black border-2 opacity-50 w-25">
+        <h4 class="card-title">${{current_user.deposit}}</h4>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Deposit Funds
+  </button>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+    Move Funds
+  </button>
+    </div>
+    <!-- <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <div class="table-responsive">
+     
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>-->
+  </div>
+
+
+
+  <!-- modal -->
+  <form class="modal fade" id="exampleModal" method="POST" action="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            {{ form_add.hidden_tag() }}
+            <div class="mb-3">
+              {{ form_add.amountadd(class="form-control") }}
+            </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{ form_add.submit(class="btn btn-primary")}}
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <form class="modal fade" id="exampleModal1" method="POST" action="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+            {{ form_sub.hidden_tag() }}
+            <div class="mb-3">
+              {{ form_sub.amountsub(class="form-control") }}
+            </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          {{ form_sub.submit(class="btn btn-primary")}}
+        </div>
+      </div>
+    </div>
+  </form>
+
+{% endblock %}

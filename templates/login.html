@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="border border-primary-subtle position-absolute top-50 start-50 translate-middle w-25 h-auto p-3 mb-2 bg-white text-dark shadow-lg rounded" style="min-width: 250px; min-height:200px"method="POST" action="/login">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.username(class="form-control") }}
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      {{ form.password(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-primary")}}
+</form>
+{% endblock %}
