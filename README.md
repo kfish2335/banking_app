@@ -2,16 +2,18 @@
  
 This is application is a banking app that allow the user to do the following:
 
-Create an account
-Check account balance
-Withdraw from account
-Add to account
+<ul>
+ <li>Create an account</li>
+ <li>Check account balance</li>
+ <li>Withdraw from account</li>
+ <li>Add to account</li>
+</ul>
 
 The tech stack used:
-
-Pyhton-Flask
-Bootstrap
-
+<ul>
+ <li>Pyhton-Flask</li>
+ <li>Bootstrap</li>
+</ul>
 
 
 This application has four pages that the user can access.
@@ -30,8 +32,9 @@ The Register Page is form that User could sign up to our application. The user w
 The Dashboard page is portal that user could use to view and update thier current balances. This page is only available if the user is logged in. The user has two buttons that allow User to change thier balanceson thier account. One Button is for increasing funds and the other is for decreasing funds. The applications does not allow user to decrease it funds below zero and will raise an errorto the user.
 
 Possible Future update:
-
-Recording user Transaction
-Display Transaction to users
-Add first and last name fields
-Add catogery field to deposit and tranfer fields
+<ul>
+ <li>Recording user Transaction</li>
+ <li>Display Transaction to users</li>
+<li>Add first and last name fields</li>
+ <li>Add catogery field to deposit and tranfer fields</li>
+</ul>
