@@ -13,12 +13,15 @@ Pyhton-Flask
 Bootstrap
 
 
+
 This application has four pages that the user can access.
 
-home
-login
-register
-dashboard
+<ul>
+<li>home</li>
+<li>login</li>
+<li>register</li>
+<li>dashboard</li>
+</ul>
 
 The Login page is form that allow the user to login into there account. User need to enter a valid username and password to login. WTForm are used for generating form. By using WTForm, we are able to use python to make form inputs in HTML. This allow the our server to validate user input data. Another benefit of WTForms is that it's provides a built-in mechanism to protect against CSRF attacks, which is a common vulnerability in web applications. WTForm is used on all forms throught out the form.
 
