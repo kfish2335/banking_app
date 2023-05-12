@@ -27,3 +27,6 @@ https://www.youtube.com/watch?v=GbJPqu0ff9A&list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23
 https://github.com/arpanneupane19/Python-Flask-Authentication-Tutorial/tree/main/templates
 https://www.youtube.com/watch?v=71EU8gnZqZQ
 https://getbootstrap.com/docs/5.3/utilities/background/#background-color
+
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
