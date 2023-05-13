@@ -1,5 +1,13 @@
-﻿# banking_app
- 
+﻿# Alpaca Valley Bank
+
+
+
+<h3>Demo:</h3>
+<blockquote> http://flask-env.eba-gmwa2ucz.us-east-1.elasticbeanstalk.com/ </blockquote>
+
+</br>
+
+<h3>About:</h3>
 This is application is a banking app that allow the user to do the following:
 
 <ul>
@@ -35,6 +43,42 @@ Possible Future update:
 <ul>
  <li>Recording user Transaction</li>
  <li>Display Transaction to users</li>
-<li>Add first and last name fields</li>
+ <li>Add first and last name fields</li>
  <li>Add catogery field to deposit and tranfer fields</li>
 </ul>
+
+<h3>How to run app locally:</h3>
+<br/>
+<h4>Create a Virtual Environment:</h4>
+<br/>
+<blockquote>
+<code>
+pip install virtualenv
+<br/>
+py -m venv env
+</code>
+</blockquote>
+<br/>
+<h4>Activate Virtual Environment:</h4>
+<blockquote>
+On Windows, run:
+
+<code>tutorial-env\Scripts\activate.bat</code>
+
+On Unix or MacOS, run:<br/>
+<code>source tutorial-env/bin/activate</code>
+</blockquote>
+
+<h4>Install Dependencies:</h4>
+<blockquote>
+
+<code>pip install -r requirements.txt</code>
+
+</blockquote>
+
+<h4>Start app:</h4>
+<blockquote>
+
+<code>py application.py</code>
+
+</blockquote>
