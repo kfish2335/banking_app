@@ -30,3 +30,13 @@ https://getbootstrap.com/docs/5.3/utilities/background/#background-color
 
 
 https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+
+
+Update 9/25/2023
+
+Add form for sennding money
+https://www.w3schools.com/howto/howto_js_autocomplete.asp
+https://stackoverflow.com/questions/39614604/autocomplete-search-box-and-pass-value-to-flask
+
+
+Add Googl map with fake bank sites
