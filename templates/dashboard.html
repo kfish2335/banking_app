@@ -8,12 +8,15 @@
         <hr class="border border-black border-2 opacity-50 w-25">
         <h4 class="card-title">${{current_user.deposit}}</h4>
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Deposit Funds
+<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#Deposit">
+    Deposit
   </button>
   <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-    Move Funds
+<button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#Withdraw">
+    Withdraw
+  </button>
+  <button type="button" class="btn btn-primary w-auto" data-bs-toggle="modal" data-bs-target="#Transfer">
+    Transfer
   </button>
     </div>
     <!-- <div class="card-body">
@@ -56,50 +59,9 @@
 
 
   <!-- modal -->
-  <form class="modal fade" id="exampleModal" method="POST" action="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Deposit</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-            {{ form_add.hidden_tag() }}
-            <div class="mb-3">
-              {{ form_add.amountadd(class="form-control") }}
-            </div>
-        
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          {{ form_add.submit(class="btn btn-primary")}}
-        </div>
-      </div>
-    </div>
-  </form>
+  {% include 'forms/deposit.html' %}
 
-  <form class="modal fade" id="exampleModal1" method="POST" action="" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Transfer Funds</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          
-            {{ form_sub.hidden_tag() }}
-            <div class="mb-3">
-              {{ form_sub.amountsub(class="form-control") }}
-            </div>
-        
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          {{ form_sub.submit(class="btn btn-primary")}}
-        </div>
-      </div>
-    </div>
-  </form>
-
+  {% include 'forms/withdraw.html' %}
+  
+  {% include 'forms/transfer.html' %}
 {% endblock %}

@@ -7,7 +7,8 @@ from wtforms.validators import (
     NumberRange,
     ValidationError,
 )
-
+from modals import User
+from flask import flash
 
 class RegisterForm(FlaskForm):
     username = StringField(
@@ -61,3 +62,25 @@ class SubForm(FlaskForm):
         render_kw={"placeholder": "Amount"},
     )
     submit = SubmitField("Save changes")
+
+
+class TransferForm(FlaskForm):
+    user = StringField(
+        validators=[InputRequired(), Length(min=4, max=20)],
+        render_kw={"placeholder": "Username"},
+    )
+
+    transfer = IntegerField(
+        validators=[InputRequired(), NumberRange(min=0, max=1000000)],
+        render_kw={"placeholder": "Amount"},
+    )
+    submit = SubmitField("Register")
+
+    def validate_user(self, user):
+        existing_user_username = User.query.filter_by(username=user.data).first()
+        if existing_user_username == None:
+            flash( "That username doesn't exists. Please enter a valid user.", "info")
+            raise ValidationError(
+                "That username doesn't exists. Please enter a valid user."
+            )
+            

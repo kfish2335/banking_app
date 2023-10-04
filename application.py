@@ -9,7 +9,7 @@ from flask_login import (
 )
 from flask_wtf.csrf import CSRFProtect
 
-from forms import AddForm, LoginForm, RegisterForm, SubForm
+from forms import AddForm, LoginForm, RegisterForm, SubForm, TransferForm
 from modals import Transaction, User, db
 
 application = Flask(__name__)
@@ -54,7 +54,6 @@ def register():
     form = RegisterForm()
 
     if form.validate_on_submit():
-        print(form.password.data)
         hashed_password = bcrypt.generate_password_hash(form.password.data)
 
         new_user = User(
@@ -75,6 +74,7 @@ def register():
 def dashboard():
     form_add = AddForm()
     form_sub = SubForm()
+    form_transfer = TransferForm()
     user = User.query.get(current_user.id)
 
     if form_add.submit.data and form_add.validate_on_submit():
@@ -89,7 +89,15 @@ def dashboard():
             flash("Transaction completed", "info")
         else:
             flash("Insufficient Funds")
-    return render_template("dashboard.html", form_add=form_add, form_sub=form_sub)
+    if form_transfer.submit.data and form_transfer.validate_on_submit():
+        target_user = User.query.filter_by(username=form_transfer.user.data).first()
+        if target_user:
+            target_user.deposit = form_transfer.transfer.data + int(target_user.deposit)
+            db.session.commit()
+            flash("Tranfer completed", "info")
+        else:
+            flash("Enter Valid User", "info")
+    return render_template("dashboard.html", form_add=form_add, form_sub=form_sub, form_transfer=form_transfer)
 
 
 @application.route("/logout", methods=["GET", "POST"])
